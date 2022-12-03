@@ -1,22 +1,22 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Schulteisz.AdventOfCode2022.Common;
-using Schulteisz.AdventOfCode2022.Day01;
+using Schulteisz.AdventOfCode2022.Day02;
 using Schulteisz.AdventOfCode2022.Interfaces;
 
 namespace Schulteisz.AdventOfCode2022.Tests
 {
     [TestClass]
-    public class Day01
-    {
+    public class Day02
+	{
         [TestMethod]
         public void Task1()
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask sut = new CalorieCounting(contentParser);
+            IDailyTask sut = new RockPaperScissors(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(69836, result);
+            Assert.AreEqual(14163, result);
         }
 
         [TestMethod]
@@ -24,9 +24,9 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask sut = new CalorieCounting(contentParser);
+            IDailyTask sut = new RockPaperScissors(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(24000, result);
+            Assert.AreEqual(15, result);
         }
 
         [TestMethod]
@@ -34,9 +34,9 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask sut = new CalorieCountingHard(contentParser);
+            IDailyTask sut = new RockPaperScissorsHard(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(207968, result);
+            Assert.AreEqual(12091, result);
         }
 
         [TestMethod]
@@ -44,9 +44,9 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask sut = new CalorieCountingHard(contentParser);
+            IDailyTask sut = new RockPaperScissorsHard(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(45000, result);
+            Assert.AreEqual(12, result);
         }
 
         internal class PredefinedContentParser : IContentParser
@@ -55,22 +55,12 @@ namespace Schulteisz.AdventOfCode2022.Tests
             {
                 return new List<string>()
             {
-                "1000",
-"2000",
-"3000",
-"",
-"4000",
-"",
-"5000",
-"6000",
-"",
-"7000",
-"8000",
-"9000",
-"",
-"10000"
+                "A Y",
+                "B X",
+                "C Z"
             };
             }
         }
     }
 }
+

@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schulteisz.AdventOfCode2022
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schulteisz.AdventOfCode2022.Interfaces", "Schulteisz.AdventOfCode2022.Interfaces\Schulteisz.AdventOfCode2022.Interfaces.csproj", "{6BCC1E71-D391-4238-A301-0F79461F93C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schulteisz.AdventOfCode2022Tests", "Schulteisz.AdventOfCode2022.Tests\Schulteisz.AdventOfCode2022Tests.csproj", "{43380804-B70B-44EB-8316-C1A3794CE863}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schulteisz.AdventOfCode2022.Tests", "Schulteisz.AdventOfCode2022.Tests\Schulteisz.AdventOfCode2022.Tests.csproj", "{43380804-B70B-44EB-8316-C1A3794CE863}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schulteisz.AdventOfCode2022.Day01", "Schulteisz.AdventOfCode2022.Day01\Schulteisz.AdventOfCode2022.Day01.csproj", "{AC33A918-0D33-403F-B57F-73412F2E5DF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schulteisz.AdventOfCode2022.Day02", "Schulteisz.AdventOfCode2022.Day02\Schulteisz.AdventOfCode2022.Day02.csproj", "{B707D612-78F0-4FA0-8279-7131E543982F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,14 @@ Global
 		{AC33A918-0D33-403F-B57F-73412F2E5DF0}.Debug|x64.Build.0 = Debug|Any CPU
 		{AC33A918-0D33-403F-B57F-73412F2E5DF0}.Release|x64.ActiveCfg = Release|Any CPU
 		{AC33A918-0D33-403F-B57F-73412F2E5DF0}.Release|x64.Build.0 = Release|Any CPU
+		{B707D612-78F0-4FA0-8279-7131E543982F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B707D612-78F0-4FA0-8279-7131E543982F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B707D612-78F0-4FA0-8279-7131E543982F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B707D612-78F0-4FA0-8279-7131E543982F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B707D612-78F0-4FA0-8279-7131E543982F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B707D612-78F0-4FA0-8279-7131E543982F}.Debug|x64.Build.0 = Debug|Any CPU
+		{B707D612-78F0-4FA0-8279-7131E543982F}.Release|x64.ActiveCfg = Release|Any CPU
+		{B707D612-78F0-4FA0-8279-7131E543982F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

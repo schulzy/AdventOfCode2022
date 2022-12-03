@@ -4,18 +4,19 @@ namespace Schulteisz.AdventOfCode2022.Day03
 {
 	public class RucksackReorganizationHard : IDailyTask
 	{
-        private IContentParser contentParser;
+        private IContentParser _contentParser;
 
         public RucksackReorganizationHard(IContentParser contentParser)
         {
-            this.contentParser = contentParser;
+            _contentParser = contentParser;
         }
 
         public string Name => "Rucksack Reorganization Hard";
 
         public long Run()
         {
-            throw new NotImplementedException();
+            Reorganizer reorganizer = new Reorganizer(_contentParser.GetLines("Task.txt"));
+            return reorganizer.CalculateGroupValue();
         }
     }
 }

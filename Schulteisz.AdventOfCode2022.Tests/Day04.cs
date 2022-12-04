@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Schulteisz.AdventOfCode2022.Common;
+using Schulteisz.AdventOfCode2022.Day04;
 using Schulteisz.AdventOfCode2022.Interfaces;
 
 namespace Schulteisz.AdventOfCode2022.Tests
@@ -13,7 +14,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask sut = null;
+            IDailyTask sut = new CampCleanup(contentParser);
             long result = sut.Run();
             Assert.AreEqual(-1, result);
         }
@@ -23,7 +24,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask sut = null;
+            IDailyTask sut = new CampCleanup(contentParser);
             long result = sut.Run();
             Assert.AreEqual(-1, result);
         }
@@ -33,7 +34,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask sut = null;
+            IDailyTask sut = new CampCleanupHard(contentParser);
             long result = sut.Run();
             Assert.AreEqual(-1, result);
         }
@@ -43,7 +44,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask sut = null;
+            IDailyTask sut = new CampCleanupHard(contentParser);
             long result = sut.Run();
             Assert.AreEqual(-1, result);
         }
@@ -53,9 +54,14 @@ namespace Schulteisz.AdventOfCode2022.Tests
             public List<string> GetLines(string manifestName)
             {
                 return new List<string>()
-            {
-                ""
-            };
+                {
+                    "2-4,6-8",
+                    "2-3,4-5",
+                    "5-7,7-9",
+                    "2-8,3-7",
+                    "6-6,4-6",
+                    "2-6,4-8"
+                };
             }
         }
     }

@@ -56,11 +56,11 @@ namespace Schulteisz.AdventOfCode2022.Tests
                 return new List<string>()
                 {
                     "vJrwpWtwJgWrhcsFMMfFFhFp",
-    "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
-    "PmmdzqPrVvPwwTWBwg",
-    "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
-    "ttgJtRGJQctTZtZT",
-    "CrZsJsPPZsGzwwsLwLmpwMDw"
+                    "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
+                    "PmmdzqPrVvPwwTWBwg",
+                    "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
+                    "ttgJtRGJQctTZtZT",
+                    "CrZsJsPPZsGzwwsLwLmpwMDw"
                 };
             }
         }

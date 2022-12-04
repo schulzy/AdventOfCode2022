@@ -54,11 +54,11 @@ namespace Schulteisz.AdventOfCode2022.Tests
             public List<string> GetLines(string manifestName)
             {
                 return new List<string>()
-            {
-                "A Y",
-                "B X",
-                "C Z"
-            };
+                {
+                    "A Y",
+                    "B X",
+                    "C Z"
+                };
             }
         }
     }

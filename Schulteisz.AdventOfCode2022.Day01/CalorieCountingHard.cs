@@ -2,8 +2,8 @@
 
 namespace Schulteisz.AdventOfCode2022.Day01
 {
-	public class CalorieCountingHard : IDailyTask
-	{
+	public class CalorieCountingHard : IDailyTask<long>
+    {
         private IContentParser _contentParser;
 
         public CalorieCountingHard(IContentParser contentParser)

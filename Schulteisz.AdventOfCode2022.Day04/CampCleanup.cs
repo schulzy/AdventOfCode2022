@@ -2,8 +2,8 @@
 
 namespace Schulteisz.AdventOfCode2022.Day04
 {
-	public class CampCleanup : IDailyTask
-	{
+	public class CampCleanup : IDailyTask<long>
+    {
         private readonly IContentParser _contentParser;
 
         public CampCleanup(IContentParser contentParser)

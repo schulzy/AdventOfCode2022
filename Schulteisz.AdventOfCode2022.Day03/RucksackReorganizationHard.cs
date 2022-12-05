@@ -2,8 +2,8 @@
 
 namespace Schulteisz.AdventOfCode2022.Day03
 {
-	public class RucksackReorganizationHard : IDailyTask
-	{
+	public class RucksackReorganizationHard : IDailyTask<long>
+    {
         private IContentParser _contentParser;
 
         public RucksackReorganizationHard(IContentParser contentParser)

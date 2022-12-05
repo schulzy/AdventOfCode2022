@@ -1,7 +1,7 @@
 ﻿using Schulteisz.AdventOfCode2022.Interfaces;
 
 namespace Schulteisz.AdventOfCode2022.Day01;
-public class CalorieCounting : IDailyTask
+public class CalorieCounting : IDailyTask<long>
 {
     private IContentParser _contentParser;
 

@@ -2,7 +2,7 @@
 
 namespace Schulteisz.AdventOfCode2022.Day03
 {
-	public class RucksackReorganization : IDailyTask
+	public class RucksackReorganization : IDailyTask<long>
     {
         private IContentParser _contentParser;
 

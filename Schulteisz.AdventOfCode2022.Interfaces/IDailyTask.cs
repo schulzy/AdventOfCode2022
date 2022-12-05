@@ -3,13 +3,13 @@
     /// <summary>
     /// Interface for the daily tasks
     /// </summary>
-    public interface IDailyTask
+    public interface IDailyTask<T>
     {
         /// <summary>
         /// Run daily task
         /// </summary>
         /// <returns>return value</returns>
-        long Run();
+        T Run();
 
         /// <summary>
         /// Name of the task

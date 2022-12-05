@@ -14,7 +14,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask sut = new CalorieCounting(contentParser);
+            IDailyTask<long> sut = new CalorieCounting(contentParser);
             long result = sut.Run();
             Assert.AreEqual(69836, result);
         }
@@ -24,7 +24,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask sut = new CalorieCounting(contentParser);
+            IDailyTask<long> sut = new CalorieCounting(contentParser);
             long result = sut.Run();
             Assert.AreEqual(24000, result);
         }
@@ -34,7 +34,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask sut = new CalorieCountingHard(contentParser);
+            IDailyTask<long> sut = new CalorieCountingHard(contentParser);
             long result = sut.Run();
             Assert.AreEqual(207968, result);
         }
@@ -44,7 +44,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask sut = new CalorieCountingHard(contentParser);
+            IDailyTask<long> sut = new CalorieCountingHard(contentParser);
             long result = sut.Run();
             Assert.AreEqual(45000, result);
         }

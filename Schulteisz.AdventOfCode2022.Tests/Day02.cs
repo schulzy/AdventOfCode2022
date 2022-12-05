@@ -14,7 +14,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask sut = new RockPaperScissors(contentParser);
+            IDailyTask<long> sut = new RockPaperScissors(contentParser);
             long result = sut.Run();
             Assert.AreEqual(14163, result);
         }
@@ -24,7 +24,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask sut = new RockPaperScissors(contentParser);
+            IDailyTask<long> sut = new RockPaperScissors(contentParser);
             long result = sut.Run();
             Assert.AreEqual(15, result);
         }
@@ -34,7 +34,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask sut = new RockPaperScissorsHard(contentParser);
+            IDailyTask<long> sut = new RockPaperScissorsHard(contentParser);
             long result = sut.Run();
             Assert.AreEqual(12091, result);
         }
@@ -44,7 +44,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask sut = new RockPaperScissorsHard(contentParser);
+            IDailyTask<long> sut = new RockPaperScissorsHard(contentParser);
             long result = sut.Run();
             Assert.AreEqual(12, result);
         }

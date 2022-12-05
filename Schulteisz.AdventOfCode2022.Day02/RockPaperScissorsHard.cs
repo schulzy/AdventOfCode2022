@@ -2,8 +2,8 @@
 
 namespace Schulteisz.AdventOfCode2022.Day02
 {
-	public class RockPaperScissorsHard : IDailyTask
-	{
+	public class RockPaperScissorsHard : IDailyTask<long>
+    {
         private readonly IContentParser _contentParser;
 
         public RockPaperScissorsHard(IContentParser contentParser)

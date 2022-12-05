@@ -1,19 +1,22 @@
-﻿using System;
-using Schulteisz.AdventOfCode2022.Interfaces;
+﻿using Schulteisz.AdventOfCode2022.Interfaces;
 
 namespace Schulteisz.AdventOfCode2022.Day04
 {
 	public class CampCleanupHard : IDailyTask
 	{
-		public CampCleanupHard(IContentParser contentParser)
+        private readonly IContentParser _contentParser;
+
+        public CampCleanupHard(IContentParser contentParser)
 		{
-		}
+            _contentParser = contentParser;
+        }
 
         public string Name => "Camp Cleanup Hard";
 
         public long Run()
         {
-            throw new NotImplementedException();
+            Camp camp = new Camp(_contentParser.GetLines("Task.txt"));
+            return camp.NumberOfSimpleOverlappingElements();
         }
     }
 }

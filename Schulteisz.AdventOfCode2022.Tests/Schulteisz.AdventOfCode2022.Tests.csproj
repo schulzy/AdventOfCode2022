@@ -36,6 +36,10 @@
     <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day04\Schulteisz.AdventOfCode2022.Day04.csproj" />
     <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day06\Schulteisz.AdventOfCode2022.Day06.csproj" />
     <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day05\Schulteisz.AdventOfCode2022.Day05.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day10\Schulteisz.AdventOfCode2022.Day10.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day09\Schulteisz.AdventOfCode2022.Day09.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day07\Schulteisz.AdventOfCode2022.Day07.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day08\Schulteisz.AdventOfCode2022.Day08.csproj" />
   </ItemGroup>
 
 </Project>

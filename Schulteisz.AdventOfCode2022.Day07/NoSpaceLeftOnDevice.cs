@@ -15,7 +15,13 @@ namespace Schulteisz.AdventOfCode2022.Day07
 
         public long Run()
         {
-            throw new NotImplementedException();
+            ConsoleParser consoleParser = new ConsoleParser(_contentParser.GetLines("Task.txt"));
+            ICommandCreator commandCreator = new CommandCreator();
+            IFileSystem fileSystem = new FileSystem();
+            IResultCalculator resultCalculator = new ResultCalculator(fileSystem);
+            Console console = consoleParser.Create(commandCreator);
+            console.PrepareFileSystem(fileSystem);
+            return resultCalculator.CalculateSum();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new TreetopTreeHouse(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(1827, result);
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new TreetopTreeHouseHard(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(335580, result);
         }
 
         [TestMethod]
@@ -46,7 +46,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new TreetopTreeHouseHard(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(8, result);
         }
 
         internal class PredefinedContentParser : IContentParser

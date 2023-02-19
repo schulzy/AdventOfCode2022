@@ -15,7 +15,8 @@ namespace Schulteisz.AdventOfCode2022.Day08
 
         public long Run()
         {
-            throw new NotImplementedException();
+            ForestManager forestManager = new ForestManager(_contentParser.GetLines("Task.txt"));
+            return forestManager.GetBiggestScenicScore();
         }
     }
 }

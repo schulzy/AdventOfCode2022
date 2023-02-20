@@ -36,7 +36,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new RopeBridgeHard(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(2303, result);
         }
 
         [TestMethod]

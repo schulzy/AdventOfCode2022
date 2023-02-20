@@ -2,20 +2,21 @@
 {
     internal class RopeMap
     {
-        private List<Point> _head = new List<Point>();
-        private List<Point> _tail = new List<Point>();
-        private Point _headActual;
-        private Point _tailActual;
+        private readonly HashSet<Point> _tail = new HashSet<Point>();
+        private readonly List<Point> _rope;
+        private readonly int _length;
 
-        public List<Point> Tail => _tail;
+        public HashSet<Point> Tail => _tail;
 
-        public RopeMap()
+        public RopeMap(int length)
         {
+            _length = length;
             var startPoint = new Point(0, 0);
-            _head.Add(startPoint);
-            _headActual = startPoint;
+            _rope = new List<Point>(length);
+            for (int i = 0; i < length; i++)
+                _rope.Add(startPoint);
+
             _tail.Add(startPoint);
-            _tailActual = startPoint;
         }
 
         public void AddStep(Direction direction, int value)
@@ -25,16 +26,20 @@
                 switch (direction)
                 {
                     case Direction.Left:
-                        GoLeft();
+                        _rope[0] = new Point(_rope[0].X - 1, _rope[0].Y);
+                        SetRope();
                         break;
                     case Direction.Right:
-                        GoRight();
+                        _rope[0] = new Point(_rope[0].X + 1, _rope[0].Y);
+                        SetRope();
                         break;
                     case Direction.Down:
-                        GoDown();
+                        _rope[0] = new Point(_rope[0].X, _rope[0].Y + 1);
+                        SetRope();
                         break;
                     case Direction.Up:
-                        GoUp();
+                        _rope[0] = new Point(_rope[0].X, _rope[0].Y - 1);
+                        SetRope();
                         break;
                     default:
                         break;
@@ -42,90 +47,59 @@
             }
         }
 
-        private void GoUp()
+        private void SetRope()
         {
-            _headActual = new Point(_headActual.X, _headActual.Y - 1);
-            _head.Add(_headActual);
-            if (!IsNextTo(_headActual, _tailActual))
+            for (int i = 1; i < _length; i++)
             {
-                _tailActual = new Point(_headActual.X, _headActual.Y + 1);
-                _tail.Add(_tailActual);
+                Point diff = _rope[i - 1] - _rope[i];
+                if(!IsNeighbours(diff))
+                {
+                    _rope[i] += CreateRealDiff(diff);
+                }
             }
+
+            _tail.Add(_rope.Last());
         }
 
-        private void GoDown()
+        private Point CreateRealDiff(Point diff)
         {
-            _headActual = new Point(_headActual.X, _headActual.Y + 1);
-            _head.Add(_headActual);
-            if (!IsNextTo(_headActual, _tailActual))
+            Func<int, int> setValue = (value) =>
             {
-                _tailActual = new Point(_headActual.X, _headActual.Y - 1);
-                _tail.Add(_tailActual);
-            }
+                if (Math.Abs(value) > 1)
+                {
+                    if (value > 0)
+                        value -= 1;
+                    else
+                        value += 1;
+                }
+
+                return value;
+            };
+
+            return new Point(setValue(diff.X), setValue(diff.Y));
         }
 
-        private void GoRight()
-        {
-            _headActual = new Point(_headActual.X + 1, _headActual.Y);
-            _head.Add(_headActual);
-            if (!IsNextTo(_headActual, _tailActual))
-            {
-                _tailActual = new Point(_headActual.X - 1, _headActual.Y);
-                _tail.Add(_tailActual);
-            }
-        }
 
-        private void GoLeft()
+        public bool IsNeighbours(Point diff)
         {
-            _headActual = new Point(_headActual.X - 1, _headActual.Y);
-            _head.Add(_headActual);
-            if (!IsNextTo(_headActual, _tailActual))
-            {
-                _tailActual = new Point(_headActual.X + 1, _headActual.Y);
-                _tail.Add(_tailActual);
-            }
-        }
+            if (Math.Abs(diff.X) > 1 || Math.Abs(diff.Y) > 1)
+                return false;
 
-        private bool IsNextTo(Point point, Point possibleNeighbours)
-        {
-            //On the point
-            if (point.X == possibleNeighbours.X && point.Y == possibleNeighbours.Y)
-                return true;
-            //Up left
-            if (point.X - 1 == possibleNeighbours.X && point.Y - 1 == possibleNeighbours.Y)
-                return true;
-            //Up
-            if (point.X == possibleNeighbours.X && point.Y - 1 == possibleNeighbours.Y)
-                return true;
-            //Up right
-            if (point.X + 1 == possibleNeighbours.X && point.Y - 1 == possibleNeighbours.Y)
-                return true;
-            //Left
-            if (point.X - 1 == possibleNeighbours.X && point.Y == possibleNeighbours.Y)
-                return true;
-            //Right
-            if (point.X + 1 == possibleNeighbours.X && point.Y == possibleNeighbours.Y)
-                return true;
-            //Down left
-            if (point.X - 1 == possibleNeighbours.X && point.Y + 1 == possibleNeighbours.Y)
-                return true;
-            //Down
-            if (point.X == possibleNeighbours.X && point.Y + 1 == possibleNeighbours.Y)
-                return true;
-            //Down right
-            if (point.X + 1 == possibleNeighbours.X && point.Y + 1 == possibleNeighbours.Y)
-                return true;
-
-            return false;
+            return true;
         }
 
         internal struct Point
         {
             public Point(int x, int y) => (X, Y) = (x, y);
             
-
             public readonly int X { get; init; }
             public readonly int Y { get; init; }
+
+            public static Point operator +(Point p1, Point p2)
+                => new Point(p1.X + p2.X, p1.Y + p2.Y);
+
+            public static Point operator -(Point p1, Point p2)
+                => new Point(p1.X - p2.X, p1.Y - p2.Y);
         }
     }
 }

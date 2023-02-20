@@ -15,7 +15,8 @@ namespace Schulteisz.AdventOfCode2022.Day09
 
         public long Run()
         {
-            throw new NotImplementedException();
+            RopeBridgeManager forestManager = new RopeBridgeManager(_contentParser.GetLines("Task.txt"));
+            return forestManager.GetTailTouch();
         }
     }
 }

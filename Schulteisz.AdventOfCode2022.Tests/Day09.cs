@@ -16,7 +16,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new RopeBridge(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(5907, result);
         }
 
         [TestMethod]
@@ -42,11 +42,11 @@ namespace Schulteisz.AdventOfCode2022.Tests
         [TestMethod]
         public void Task2Predefined()
         {
-            IContentParser contentParser = new PredefinedContentParser();
+            IContentParser contentParser = new PredefinedContentParserHard();
 
             IDailyTask<long> sut = new RopeBridgeHard(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(36, result);
         }
 
         internal class PredefinedContentParser : IContentParser
@@ -66,6 +66,24 @@ namespace Schulteisz.AdventOfCode2022.Tests
                 };
             }
         }
-	}
+
+        internal class PredefinedContentParserHard : IContentParser
+        {
+            public List<string> GetLines(string manifestName)
+            {
+                return new List<string>()
+                {
+                    "R 5",
+                    "U 8",
+                    "L 8",
+                    "D 3",
+                    "R 17",
+                    "D 10",
+                    "L 25",
+                    "U 20"
+                };
+            }
+        }
+    }
 }
 

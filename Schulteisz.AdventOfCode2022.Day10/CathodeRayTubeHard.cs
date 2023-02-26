@@ -2,7 +2,7 @@
 
 namespace Schulteisz.AdventOfCode2022.Day10
 {
-	public class CathodeRayTubeHard : IDailyTask<long>
+	public class CathodeRayTubeHard : IDailyTask<List<string>>
     {
         private IContentParser contentParser;
 
@@ -13,7 +13,7 @@ namespace Schulteisz.AdventOfCode2022.Day10
 
         public string Name => "Cathode-Ray Tube Hard";
 
-        public long Run()
+        public List<string> Run()
         {
             throw new NotImplementedException();
         }

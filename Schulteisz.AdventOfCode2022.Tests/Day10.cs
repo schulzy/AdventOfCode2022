@@ -16,7 +16,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new CathodeRayTube(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(13740, result);
         }
 
         [TestMethod]
@@ -34,9 +34,14 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask<long> sut = new CathodeRayTubeHard(contentParser);
-            long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            IDailyTask<List<string>> sut = new CathodeRayTubeHard(contentParser);
+            List<string> result = sut.Run();
+            Assert.AreEqual("", result[0]);
+            Assert.AreEqual("", result[1]);
+            Assert.AreEqual("", result[2]);
+            Assert.AreEqual("", result[3]);
+            Assert.AreEqual("", result[4]);
+            Assert.AreEqual("", result[5]);
         }
 
         [TestMethod]
@@ -44,9 +49,14 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask<long> sut = new CathodeRayTubeHard(contentParser);
-            long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            IDailyTask<List<string>> sut = new CathodeRayTubeHard(contentParser);
+            List<string> result = sut.Run();
+            Assert.AreEqual("##..##..##..##..##..##..##..##..##..##..", result[0]);
+            Assert.AreEqual("###...###...###...###...###...###...###.", result[1]);
+            Assert.AreEqual("####....####....####....####....####....", result[2]);
+            Assert.AreEqual("#####.....#####.....#####.....#####.....", result[3]);
+            Assert.AreEqual("######......######......######......####", result[4]);
+            Assert.AreEqual("#######.......#######.......#######.....", result[5]);
         }
 
         internal class PredefinedContentParser : IContentParser

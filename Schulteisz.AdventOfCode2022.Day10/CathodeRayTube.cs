@@ -4,18 +4,19 @@ namespace Schulteisz.AdventOfCode2022.Day10
 {
 	public class CathodeRayTube : IDailyTask<long>
     {
-        private IContentParser contentParser;
+        private IContentParser _contentParser;
 
         public CathodeRayTube(IContentParser contentParser)
         {
-            this.contentParser = contentParser;
+            _contentParser = contentParser;
         }
 
         public string Name => "Cathode-Ray Tube";
 
         public long Run()
         {
-            throw new NotImplementedException();
+            CycleManager cycleManager = new CycleManager(_contentParser.GetLines("Task.txt"));
+            return cycleManager.RunCycle();
         }
     }
 }

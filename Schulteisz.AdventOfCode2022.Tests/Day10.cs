@@ -36,12 +36,12 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<List<string>> sut = new CathodeRayTubeHard(contentParser);
             List<string> result = sut.Run();
-            Assert.AreEqual("", result[0]);
-            Assert.AreEqual("", result[1]);
-            Assert.AreEqual("", result[2]);
-            Assert.AreEqual("", result[3]);
-            Assert.AreEqual("", result[4]);
-            Assert.AreEqual("", result[5]);
+            Assert.AreEqual("####.#..#.###..###..####.####..##..#....", result[0]);
+            Assert.AreEqual("...#.#..#.#..#.#..#.#....#....#..#.#....", result[1]);
+            Assert.AreEqual("..#..#..#.#..#.#..#.###..###..#....#....", result[2]);
+            Assert.AreEqual(".#...#..#.###..###..#....#....#....#....", result[3]);
+            Assert.AreEqual("#....#..#.#....#.#..#....#....#..#.#....", result[4]);
+            Assert.AreEqual("####..##..#....#..#.#....####..##..####.", result[5]);
         }
 
         [TestMethod]

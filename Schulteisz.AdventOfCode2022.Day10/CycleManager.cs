@@ -23,11 +23,10 @@
 			}
         }
 
-        public int RunCycle()
+        public T RunCycle<T>(ICalcuator<T> calcuator)
 		{
 			int x = 1;
 			int cycleTime = 0;
-			int sumSpecalCycle = 0;
 			while (true)
 			{
 				if (!Commands.TryDequeue(out var command))
@@ -36,15 +35,12 @@
 				for (int i = 0; i < command.CycleTime; i++)
 				{
 					cycleTime++;
-					if ((cycleTime - 20) % 40 == 0)
-                        sumSpecalCycle += cycleTime*x;
+					calcuator.Calculate(cycleTime, x);
                 }
 				x += command.Value;
 			}
 
-			return sumSpecalCycle;
+			return calcuator.Result;
 		}
 	}
 }
-
-

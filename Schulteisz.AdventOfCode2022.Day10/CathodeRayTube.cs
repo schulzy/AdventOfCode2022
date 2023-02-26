@@ -16,7 +16,8 @@ namespace Schulteisz.AdventOfCode2022.Day10
         public long Run()
         {
             CycleManager cycleManager = new CycleManager(_contentParser.GetLines("Task.txt"));
-            return cycleManager.RunCycle();
+            ICalcuator<int> calcuator = new SimpleCalculator();
+            return cycleManager.RunCycle<int>(calcuator);
         }
     }
 }

@@ -42,6 +42,19 @@
     <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day08\Schulteisz.AdventOfCode2022.Day08.csproj" />
     <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day11\Schulteisz.AdventOfCode2022.Day11.csproj" />
     <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day12\Schulteisz.AdventOfCode2022.Day12.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day13\Schulteisz.AdventOfCode2022.Day13.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day14\Schulteisz.AdventOfCode2022.Day14.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day15\Schulteisz.AdventOfCode2022.Day15.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day16\Schulteisz.AdventOfCode2022.Day16.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day17\Schulteisz.AdventOfCode2022.Day17.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day18\Schulteisz.AdventOfCode2022.Day18.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day19\Schulteisz.AdventOfCode2022.Day19.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day20\Schulteisz.AdventOfCode2022.Day20.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day21\Schulteisz.AdventOfCode2022.Day21.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day22\Schulteisz.AdventOfCode2022.Day22.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day23\Schulteisz.AdventOfCode2022.Day23.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day24\Schulteisz.AdventOfCode2022.Day24.csproj" />
+    <ProjectReference Include="..\Schulteisz.AdventOfCode2022.Day25\Schulteisz.AdventOfCode2022.Day25.csproj" />
   </ItemGroup>
 
 </Project>

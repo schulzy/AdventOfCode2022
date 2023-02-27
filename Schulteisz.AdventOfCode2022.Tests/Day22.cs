@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Schulteisz.AdventOfCode2022.Tests
 {
     [TestClass]
-    public class Day13
+    public class Day22
     {
         [TestMethod]
         public void Task1() 

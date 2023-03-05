@@ -15,6 +15,9 @@ namespace Schulteisz.AdventOfCode2022.Day11
 
         public long Run()
         {
+            MonkeyManager manager = new MonkeyManager(_contentParser.GetLines("Task.txt"));
+            manager.FindMonkeyBusiness(20);
+
             throw new NotImplementedException();
         }
     }

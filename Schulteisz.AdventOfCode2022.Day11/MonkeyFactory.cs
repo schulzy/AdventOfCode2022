@@ -47,21 +47,22 @@
             monkey.Operation = CreateOperation(operation);
 
             // Set test conditon
-            var condition = monkeyCommands[3].TakeLast(2).ToString();
+            var condition = new string(monkeyCommands[3].TakeLast(2).ToArray());
             if(condition is null)
                 throw new ArgumentNullException(nameof(condition));
-            monkey.Condition = x => x % int.Parse(condition) == 0;
+            monkey.DivisibleNumber = int.Parse(condition);
+            monkey.Condition = x => x % monkey.DivisibleNumber == 0;
 
             // Set monkey conditions
             var trueCondition = new string(monkeyCommands[4].TakeLast(2).ToArray());
             if(trueCondition is null)
                 throw new ArgumentNullException(nameof(trueCondition));
-            monkey.TrueConditionMonkey = monkeys.Find(monkey => monkey.Id == int.Parse(trueCondition));
+            monkey.TrueConditionMonkey = monkeys.Find(monkey => monkey.Id == long.Parse(trueCondition));
 
             var falseCondition = new string(monkeyCommands[5].TakeLast(2).ToArray());
             if (falseCondition is null)
                 throw new ArgumentNullException(nameof(falseCondition));
-            monkey.FalseConditionMonkey = monkeys.Find(monkey => monkey.Id == int.Parse(falseCondition));
+            monkey.FalseConditionMonkey = monkeys.Find(monkey => monkey.Id == long.Parse(falseCondition));
         }
 
         private Func<long, long> CreateOperation(string operation)

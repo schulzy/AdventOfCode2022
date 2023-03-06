@@ -16,7 +16,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new MonkeyInTheMiddle(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(95472, result);
         }
 
         [TestMethod]
@@ -34,9 +34,9 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask<long> sut = new MonkeyInTheMiddleHard(contentParser);
+            IDailyTask<long> sut = new MonkeyInTheMiddleHard(contentParser, 10000);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(17926061332, result);
         }
 
         [TestMethod]
@@ -44,9 +44,34 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask<long> sut = new MonkeyInTheMiddleHard(contentParser);
+            IDailyTask<long> sut = new MonkeyInTheMiddleHard(contentParser, 10000);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(2713310158, result);
+        }
+
+        [TestMethod]
+        [DataRow(1, new long[] { 2,4,3,6})]
+        [DataRow(20, new long[] { 99,97,8,103})]
+        [DataRow(1000, new long[] { 5204, 4792, 199, 5192 })]
+        [DataRow(2000, new long[] { 10419, 9577, 392, 10391 })]
+        [DataRow(3000, new long[] { 15638, 14358, 587, 15593 })]
+        [DataRow(4000, new long[] { 20858, 19138, 780, 20797 })]
+        [DataRow(5000, new long[] { 26075, 23921, 974, 26000 })]
+        [DataRow(6000, new long[] { 31294, 28702, 1165, 31204 })]
+        [DataRow(7000, new long[] { 36508, 33488, 1360, 36400 })]
+        [DataRow(8000, new long[] { 41728, 38268, 1553, 41606 })]
+        [DataRow(9000, new long[] { 46945, 43051, 1746, 46807 })]
+        [DataRow(10000, new long[] { 52166, 47830, 1938, 52013 })]
+        public void Task2PredefinedParts(int input, long[] expected)
+        {
+            IContentParser contentParser = new PredefinedContentParser();
+
+            MonkeyInTheMiddleHard sut = new MonkeyInTheMiddleHard(contentParser, input);
+            List<long> result = sut.GetPartResults();
+            Assert.AreEqual(expected[0], result[0]);
+            Assert.AreEqual(expected[1], result[1]);
+            Assert.AreEqual(expected[2], result[2]);
+            Assert.AreEqual(expected[3], result[3]);
         }
 
         internal class PredefinedContentParser : IContentParser

@@ -1,4 +1,4 @@
-﻿namespace Schulteisz.AdventOfCode2022.Day10
+﻿    namespace Schulteisz.AdventOfCode2022.Day10
 {
     public class ComplexCalculator : ICalcuator<List<string>>
     {

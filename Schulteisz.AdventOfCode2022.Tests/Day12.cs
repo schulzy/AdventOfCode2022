@@ -14,7 +14,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask<long> sut = new Schulteisz.AdventOfCode2022.Day12.Day12(contentParser);
+            IDailyTask<long> sut = new HillClimbingAlgorithm(contentParser);
             long result = sut.Run();
             Assert.AreEqual(-1, result);
         }
@@ -24,7 +24,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask<long> sut = new Schulteisz.AdventOfCode2022.Day12.Day12(contentParser);
+            IDailyTask<long> sut = new HillClimbingAlgorithm(contentParser);
             long result = sut.Run();
             Assert.AreEqual(-1, result);
         }
@@ -34,7 +34,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new ContentParser();
 
-            IDailyTask<long> sut = new Day12Hard(contentParser);
+            IDailyTask<long> sut = new HillClimbingAlgorithmHard(contentParser);
             long result = sut.Run();
             Assert.AreEqual(-1, result);
         }
@@ -44,7 +44,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
         {
             IContentParser contentParser = new PredefinedContentParser();
 
-            IDailyTask<long> sut = new Day12Hard(contentParser);
+            IDailyTask<long> sut = new HillClimbingAlgorithmHard(contentParser);
             long result = sut.Run();
             Assert.AreEqual(-1, result);
         }
@@ -55,8 +55,12 @@ namespace Schulteisz.AdventOfCode2022.Tests
             {
                 return new List<string>()
                 {
-                    ""
-                };
+                    "Sabqponm",
+                    "abcryxxl",
+                    "accszExk",
+                    "acctuvwj",
+                    "abdefghi"
+                 };
             }
         }
     }

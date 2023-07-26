@@ -2,11 +2,11 @@
 
 namespace Schulteisz.AdventOfCode2022.Day12
 {
-	public class Day12Hard : IDailyTask<long>
-	{
+	public class HillClimbingAlgorithm : IDailyTask<long>
+    {
         private IContentParser _contentParser;
 
-        public Day12Hard(IContentParser contentParser)
+        public HillClimbingAlgorithm(IContentParser contentParser)
         {
             _contentParser = contentParser;
         }

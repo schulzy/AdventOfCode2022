@@ -2,7 +2,7 @@
 {
 	public class MonkeyManager
 	{
-        private List<string> _list;
+        private readonly List<string> _list;
         private List<Monkey> _monkeys = new List<Monkey>();
 
         public MonkeyManager(List<string> list)

@@ -4,18 +4,20 @@ namespace Schulteisz.AdventOfCode2022.Day12
 {
 	public class HillClimbingAlgorithmHard : IDailyTask<long>
 	{
-        private IContentParser _contentParser;
+        private readonly IContentParser _contentParser;
 
         public HillClimbingAlgorithmHard(IContentParser contentParser)
         {
             _contentParser = contentParser;
         }
 
-        public string Name => throw new NotImplementedException();
+        public string Name => "Hill Climbing Algorithm Hard";
 
         public long Run()
         {
-            throw new NotImplementedException();
+            HillManager hillManager = new HillManager(_contentParser.GetLines("Task.txt"));
+            hillManager.CreateHill();
+            return hillManager.AllTheShortestPath();
         }
     }
 }

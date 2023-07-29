@@ -2,7 +2,7 @@
 {
 	internal class MonkeyFactory
 	{
-        private IList<string> _monkeyLines;
+        private readonly IList<string> _monkeyLines;
         public MonkeyFactory(IList<string> monkeyLines)
 		{
             _monkeyLines = monkeyLines;
@@ -70,13 +70,13 @@
             
             switch (operation)
             {
-                case string s when s.Contains("+"):
+                case { } s when s.Contains("+"):
                     return CreateAdd(s.Split("+"));
-                case string s when s.Contains("-"):
+                case { } s when s.Contains("-"):
                     return CreateSub(s.Split("-"));
-                case string s when s.Contains("*"):
+                case { } s when s.Contains("*"):
                     return CreateMulti(s.Split("*"));
-                case string s when s.Contains("/"):
+                case { } s when s.Contains("/"):
                     return CreateDiv(s.Split("/"));
                 default:
                     throw new ArgumentOutOfRangeException(nameof(operation));

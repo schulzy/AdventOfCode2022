@@ -16,7 +16,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new HillClimbingAlgorithm(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(420, result);
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new HillClimbingAlgorithm(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(31, result);
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new HillClimbingAlgorithmHard(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(414, result);
         }
 
         [TestMethod]
@@ -46,7 +46,7 @@ namespace Schulteisz.AdventOfCode2022.Tests
 
             IDailyTask<long> sut = new HillClimbingAlgorithmHard(contentParser);
             long result = sut.Run();
-            Assert.AreEqual(-1, result);
+            Assert.AreEqual(29, result);
         }
 
         internal class PredefinedContentParser : IContentParser
